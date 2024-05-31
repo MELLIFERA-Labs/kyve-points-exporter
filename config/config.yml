@@ -1,0 +1,13 @@
+modules:
+  default:
+    metrics:
+    - name: staker_pools
+      type: object
+      path: '{.staker.pools[*]}'
+      help: Accumulated points for staker pools
+      labels:
+        pool_id: '{.pool.id}'
+        name: '{.pool.name}'
+        valaddress: '{.valaddress}'
+      values:
+        points: '{.points}'
